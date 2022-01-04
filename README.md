@@ -5,7 +5,8 @@ They have been conveniantly put into in to .pkg form (via the postinstall script
 
 
 
-# Code Sources
-This work is an extension of others' work. You can view precursor code and inspiration for this project at the links below:
+# Sources
+This project is an extension of others' work. Code for this project has been borrowed from or was inspiried by:
 * https://www.jamf.com/jamf-nation/discussions/35211/updates-to-google-chrome-deployment-for-macos#responseChild200000
 * https://community.jamf.com/t5/jamf-pro/latest-firefox-now-available-as-pkg/m-p/228261/highlight/true#M216508
+* https://stackoverflow.com/questions/6881034/curl-to-grab-remote-filename-after-following-location
