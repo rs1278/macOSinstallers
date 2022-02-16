@@ -11,7 +11,7 @@ pkgPath="/tmp/$pkgName"
 
 
 # Install PKG
-sudo installer -pkg "$pkgPath" -target $3
+sudo installer -pkg "$pkgPath" -target /
 
 
 #Remove downloaded PKG
