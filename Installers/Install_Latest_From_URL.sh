@@ -64,7 +64,7 @@ case "option" in
         location=${$(sudo hdiutil attach -nobrowse "$dmgPath" -quiet -verbose | grep "/Volumes/")#*HFS}
         location=${location#*disk}
         location=${location#*Volumes}
-        location=${foo/#/"/Volumes"}
+        location=${location/#/"/Volumes"}
         
         # Find App Name
         name=$(ls $location | grep .app)
