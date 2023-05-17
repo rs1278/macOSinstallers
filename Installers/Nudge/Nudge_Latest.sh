@@ -9,7 +9,7 @@ downloadUrl="https://github.com/macadmins/nudge/releases/download/v$versionNumbe
 header="$(curl -sI "$downloadUrl" | tr -d '\r')"
 pkgName=$(printf "%s" "${downloadUrl[@]}" | sed 's@.*/@@' | sed 's/%20/-/g')
 pkgPath="/tmp/$pkgName"
-downloadUrl2="https://github.com/macadmins/nudge/releases/download/v$versionNumber/Nudge_LaunchAgent-1.0.0.pkg"
+downloadUrl2="https://github.com/macadmins/nudge/releases/download/v$versionNumber/Nudge_LaunchAgent-1.0.1.pkg"
 pkgName2=$(printf "%s" "${downloadUrl2[@]}" | sed 's@.*/@@' | sed 's/%20/-/g')
 pkgPath2="/tmp/$pkgName2"
 
