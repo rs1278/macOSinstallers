@@ -13,6 +13,26 @@ downloadUrl2="https://github.com/macadmins/nudge/releases/download/v$versionNumb
 pkgName2=$(printf "%s" "${downloadUrl2[@]}" | sed 's@.*/@@' | sed 's/%20/-/g')
 pkgPath2="/tmp/$pkgName2"
 
+# Check if Nudge is already installed and get the version.
+# Assumes nudge is in Applications folder, if not, assumes its in Utilities.
+nudgePath="/Applications/Nudge.app"
+if [ ! -e "$nudgePath"; then
+    nudgePath="/Applications/Utilities/Nudge.app"
+fi
+
+if [ -e "$nudgePath" ]; then
+    installedVersion=$(defaults read "$nudgePath/Contents/Info.plist" CFBundleShortVersionString)
+    if [ "$installedVersion" = "$versionNumber" ]; then
+        echo "Nudge is already up to date (version $versionNumber)"
+        exit 0
+    else
+        echo "Updating Nudge from version $installedVersion to version $versionNumber"
+    fi
+else
+    echo "Nudge is not installed. Installing version $versionNumber"
+fi
+
+
 # Download files
 /usr/bin/curl -L -o "$pkgPath" "$downloadUrl"
 /usr/bin/curl -L -o "$pkgPath2" "$downloadUrl2"
