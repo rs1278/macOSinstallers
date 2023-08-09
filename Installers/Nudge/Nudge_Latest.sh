@@ -16,7 +16,7 @@ pkgPath2="/tmp/$pkgName2"
 # Check if Nudge is already installed and get the version.
 # Assumes nudge is in Applications folder, if not, assumes its in Utilities.
 nudgePath="/Applications/Nudge.app"
-if [ ! -e "$nudgePath"; then
+if [ ! -e "$nudgePath" ]; then
     nudgePath="/Applications/Utilities/Nudge.app"
 fi
 
